@@ -4,31 +4,47 @@ server:
 logging:
   level:
     root: INFO
-    org.springframework.web: INFO
-    org.springframework.security: INFO
-    org.springframework.security.oauth2: INFO
+    org.springframework.web: debug
+    org.springframework.security: debug
+    org.springframework.security.oauth2: debug
 
 spring:
   security:
     oauth2:
       client:
         registration:
-          articles-client-oidc:
+#          articles-client-oidc:
+#            provider: spring
+#            client-id: articles-client
+#            client-secret: secret
+#            authorization-grant-type: authorization_code
+#            redirect-uri: "http://127.0.0.1:8080/login/oauth2/code/{registrationId}"
+#            scope: openid
+#            client-name: articles-client-oidc
+#          articles-client-authorization-code:
+#            provider: spring
+#            client-id: articles-client
+#            client-secret: secret
+#            authorization-grant-type: authorization_code
+#            redirect-uri: "http://127.0.0.1:8080/authorized"
+#            scope: articles.read
+#            client-name: articles-client-authorization-code
+          messaging-client-oidc:
             provider: spring
-            client-id: articles-client
+            client-id: messaging-client
             client-secret: secret
             authorization-grant-type: authorization_code
             redirect-uri: "http://127.0.0.1:8080/login/oauth2/code/{registrationId}"
             scope: openid
-            client-name: articles-client-oidc
-          articles-client-authorization-code:
+            client-name: messaging-client-oidc
+          messaging-client-authorization-code:
             provider: spring
-            client-id: articles-client
+            client-id: messaging-client
             client-secret: secret
             authorization-grant-type: authorization_code
             redirect-uri: "http://127.0.0.1:8080/authorized"
-            scope: articles.read
-            client-name: articles-client-authorization-code
+            scope: message.read
+            client-name: messaging-client-authorization-code
         provider:
           spring:
             issuer-uri: http://auth-server:9000
