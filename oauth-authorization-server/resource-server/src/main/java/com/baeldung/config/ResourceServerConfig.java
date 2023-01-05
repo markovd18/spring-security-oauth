@@ -13,7 +13,7 @@ public class ResourceServerConfig {
         http.mvcMatcher("/articles/**")
           .authorizeRequests()
           .mvcMatchers("/articles/**")
-          .access("hasAuthority('SCOPE_message.read')")
+          .access("hasAuthority('SCOPE_SYSTEM_ADMIN')")
           .and()
           .oauth2ResourceServer()
           .jwt();

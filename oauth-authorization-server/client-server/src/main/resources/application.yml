@@ -43,7 +43,7 @@ spring:
             client-secret: secret
             authorization-grant-type: authorization_code
             redirect-uri: "http://127.0.0.1:8080/authorized"
-            scope: message.read
+            scope: SYSTEM_ADMIN
             client-name: messaging-client-authorization-code
         provider:
           spring:

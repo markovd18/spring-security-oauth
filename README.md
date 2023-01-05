@@ -1,3 +1,14 @@
+## Návod na spuštění
+- upravit soubor `/etc/hosts` přidáním řádku `127.0.0.1   auth.server`
+- Otevřít projekt ve složce `oauth-authorization-server`
+- Nastavit Run/Debug konfigurace pro `resource-server` a `client-server`
+- Nakonfigurovat `client-server` tak, aby korespondoval s výchozím registrovaným klientem v `loya-auth`
+- Nakonfigurovat  resource-server` tak, aby ` ArticlesController vyžadoval autorizaci jedním ze scopes registrovaného klienta
+- Spustit `loya-auth` server
+- Spustit `resource-server`
+- Spustit `client-server`
+- `GET` request na url `localhost:8080/articles`
+  
 ## Spring Security OAuth
 
 I've just announced a new course, dedicated on exploring the new OAuth2 stack in Spring Security 5 - Learn Spring Security OAuth: 
